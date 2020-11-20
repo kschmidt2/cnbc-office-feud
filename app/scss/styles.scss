@@ -20,47 +20,170 @@ $breakpoint-lg: 717px;
   }
 }
 
+$font-stack: 'Avenir', 'Avenir Next', 'Arial', sans-serif;
+
 @import "colors";
 
-.chart-area {
-  @import "type";
-  @import "highcharts";
-
-  box-sizing: border-box;
-
-  background-size: 100px;
-  background-repeat: no-repeat;
-  background-image:
-    url(https://fm-static.cnbc.com/awsmedia/chart/2019/6/10/grow_leaves.1562793463706.png);
-  background-position: bottom right;
-  max-width: 660px;
-  margin-bottom: 25px;
+body {
+  background-color: darken($nbc-blue, 8%);
+  padding:0 2% 2%;
   font-family: $font-stack;
+}
 
-  & a {
-    border-bottom: 1px solid $green-primary;
-    color: $green-primary;
-    text-decoration: none;
+.header-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img {
+  max-height: 70px;
+}
+
+.header {
+  text-align: center;
+}
+
+.score-box {
+  text-align: center;
+  height: 95px;
+  background-color: black;
+  width: 370px;
+  margin: 10px auto;
+  font-family: 'Codystar';
+  color: white;
+  font-size: 80px;
+  padding-top: 5px;
+  outline: 2px #ccc dotted;
+  outline-offset: -8px;
+}
+
+h1 {
+  color: $nbc-yellow;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 180px;
+  letter-spacing: 5px;
+  line-height: 0;
+  font-family: 'Budmo';
+}
+
+.round {
+  font-size: 60px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  margin-top: -50px;
+  margin-bottom: 30px;
+}
+
+.chart-area {
+  background-color: $nbc-yellow;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  box-shadow: inset 0 0 30px rgba(0,0,0,.25);
+
+  .response {
+    height: 200px;
+    margin: 20px 30px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,.25);
+    outline: 2px black;
+    outline-offset: -2px;
+    border: 2px solid black;
+    // background: linear-gradient(lighten($nbc-blue,20%) 20%, $nbc-blue)
+    background-color: $nbc-orange;
+    width: 47.4%;
   }
 
-  & .chart-title-social, & .grow-logo-social {
+  .response-container {
+    margin: 10px auto;
+    background-color: darken($nbc-blue,10%);
+    height: 160px;
+    box-shadow: 0 0 40px rgba(0,0,0,.15);
+    text-align: center;
+    margin: 20px 20px;
+    color: white;
+  }
+
+  .response-number {  
+    font-size: 130px; 
+    font-weight: 900;  
+  }
+
+  .answer {
     display: none;
-  }
-
-  & .chart-container {
-    width: 100%;
-    height: 300px;
-    margin-top: -10px;
-    @include sm-md-xl {
-      height: 400px;
+    height: 70px;
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 45px 10px;
+    & .points {
+      color: $nbc-yellow;
     }
   }
 
-  & .grow-logo {
-    width: 214px;
-    margin-top: 20px;
-  }
+
+ 
   
+}
+
+.intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 10%;
+  background-color: darken($nbc-blue,10%);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-size: 65px;
+  & .ampersand {
+    color: $nbc-orange;
+  }
+  & .grow-name {
+    text-transform: lowercase;
+    font-weight: 700;
+    font-size: 95px;
+    letter-spacing: -4px;
+  }
+  & h1 {
+    color: $nbc-orange;
+  }
+}
+
+.winner {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 10%;
+  background-color: $nbc-orange;
+  width: 100%;
+  height: 100%;
+  font-size: 200px;
+  text-transform: uppercase;
+  color: darken($nbc-blue,15%);
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Budmo';
+  & img {
+    margin-top: 50px;
+  }
+  & .score-box {
+    color: $nbc-yellow;
+    height: 190px;
+    width: 740px;
+    font-size: 160px;
+    outline: 4px $nbc-yellow dotted;
+    outline-offset: -16px;
+  }
 }
 
 // @import "social";
